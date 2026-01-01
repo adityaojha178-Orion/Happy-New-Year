@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy New Year Celebration</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="text-gray-800">
+
+    <!-- Audio -->
+    <audio id="bgMusic" loop>
+        <source src="https://ia800304.us.archive.org/29/items/AuldLangSyne_255/Auld_Lang_Syne.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- ================= LANDING PAGE ================= -->
+    <div id="view-landing" class="flex flex-col items-center justify-center min-h-screen night-sky text-center px-4 relative overflow-hidden">
+        <canvas id="fireworksCanvas" class="absolute inset-0 pointer-events-none z-0"></canvas>
+
+        <div class="relative z-10">
+            <h1 class="text-6xl md:text-9xl font-bold text-yellow-300 mb-8 font-serif animate-pulse">
+                Happy <br> New Year!
+            </h1>
+
+            <button onclick="openModal()" class="bg-gradient-to-r from-pink-600 to-purple-600 text-white px-10 py-5 rounded-full font-bold text-xl">
+                🎉 Let's Celebrate
+            </button>
+        </div>
+    </div>
+
+    <!-- ================= MODAL ================= -->
+    <div id="view-modal" class="fixed inset-0 bg-black/60 flex items-center justify-center hidden">
+        <div class="bg-white rounded-2xl p-8 text-center max-w-md w-full">
+            <div id="modal-dots" class="flex justify-center gap-2 mb-6"></div>
+            <div id="modal-content"></div>
+            <button id="modal-btn" onclick="nextModalStep()" class="mt-6 bg-pink-500 text-white px-6 py-2 rounded-full">
+                Next →
+            </button>
+        </div>
+    </div>
+
+    <!-- ================= CELEBRATION ================= -->
+    <div id="view-celebration" class="hidden min-h-screen bg-gradient-to-b from-pink-50 to-white">
+        <div id="balloons-container"></div>
+        <div id="lights-container" class="hidden"></div>
+
+        <div class="text-center py-20">
+            <h1 class="text-4xl font-bold">Let's Celebrate 🎉</h1>
+            <button onclick="openCurtain()" class="mt-6 px-6 py-3 bg-pink-500 text-white rounded-full">
+                💌 A New Year Message
+            </button>
+        </div>
+    </div>
+
+    <!-- ================= CURTAIN ================= -->
+    <div id="curtain-overlay" class="fixed inset-0 hidden"></div>
+
+    <div id="particle-container"></div>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
